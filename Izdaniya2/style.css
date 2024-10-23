@@ -1,0 +1,81 @@
+ *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+.title {
+    position: absolute;
+    width: 725px;
+    height: 61px;
+    left: 20px;
+    top: 283px;
+    color: #15186D;
+    font-size: 48px;
+    font-family: Roboto;
+    font-weight: 700;
+    line-height: 67.20px;
+    word-wrap: break-word;
+}
+
+.content {
+    position: absolute;
+    width: 1418px;
+    height: 3536px;
+    left: 20px;
+    top: 360px;
+}
+
+.intro {
+    color: black;
+    font-size: 30px;
+    font-family: Roboto;
+    font-weight: 700;
+    line-height: 42px;
+    word-wrap: break-word;
+}
+
+.intro a {
+    color: black;
+}
+
+.year-title {
+    color: black;
+    font-size: 27px;
+    font-family: Roboto;
+    font-weight: 700;
+    line-height: 37.80px;
+    word-wrap: break-word;
+}
+
+.month-link a {
+    color: black;
+    font-size: 24px;
+    font-family: Roboto;
+    font-weight: 700;
+    text-decoration: underline;
+    line-height: 33.60px;
+    word-wrap: break-word;
+}
+
+.month-link a {
+    color: black;
+}
+
+.month-size {
+    color: black;
+    font-size: 24px;
+    font-family: Roboto;
+    font-weight: 700;
+    line-height: 33.60px;
+    word-wrap: break-word;
+}
+
+.bullet {
+    color: black;
+    font-size: 24px;
+    font-family: Roboto;
+    font-weight: 700;
+    margin-right: 5px;
+    text-decoration: none;
+}
