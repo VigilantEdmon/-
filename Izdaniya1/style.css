@@ -1,0 +1,42 @@
+ *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.title {
+    position: absolute;
+    width: 1216px;
+    height: 79px;
+    left: 21px;
+    top: 279px;
+    color: #15186D;
+    font-size: 48px;
+    font-family: Roboto;
+    font-weight: 700;
+    line-height: 67.20px;
+    word-wrap: break-word;
+}
+
+.links {
+    position: absolute;
+    width: 375px;
+    height: 455px;
+    left: 10px;
+    top: 361px;
+}
+
+.links span {
+    color: black;
+    font-size: 24px;
+    font-family: Roboto;
+    font-weight: 700;
+    text-decoration: underline;
+    line-height: 33.60px;
+    word-wrap: break-word;
+}
+
+.links a {
+    color: inherit;
+    text-decoration: inherit;
+}
