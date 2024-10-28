@@ -4,8 +4,14 @@
     box-sizing: border-box;
   }
   @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+  @font-face {
+    font-family: 'Cygve';
+    src: url('fonts/Cygre-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
   body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Cygve', sans-serif;
     margin: 0;
     overflow-x: hidden;
     max-width: 100%;
@@ -46,8 +52,6 @@
     border-radius: 100px;
   
   }
-  
-
   
   .wrapper {
     position: absolute;
@@ -135,9 +139,9 @@
 .resoursesInfo{
   
       position: absolute;
-      top: 250px;    
+      top: 250px;
       font-size: 30px;
-      font-family: Roboto;
+      font-family: Cygre;
       padding: 30px;
 
 }
@@ -166,10 +170,10 @@ h2{
 
   
     color: rgb(0, 0, 0);
-    font-family: Roboto;
+    font-family: Cygre;
     font-size: 23px;
     
-    font-family: Roboto;
+    font-family: Cygre;
    
     letter-spacing: 0%;
     text-align: left;
@@ -210,7 +214,7 @@ h2{
 footer {
   position: absolute;
   width: 100%;
-  font-family: Andale Mono, monospace; 
+  font-family: Cygre, monospace; 
   height: 129px;
   top: 1100px;
   background: linear-gradient(90deg, rgba(15,87,186,1) 23%, rgba(9,9,121,1) 82%);
@@ -220,7 +224,7 @@ footer {
 footer .left-bottom,
           footer .right-bottom {
               margin: 0;
-              font-family: Andale Mono, monospace; 
+              font-family: Cygre, monospace; 
               color: #FFFFFF;
               font-size: 20px;
               padding: 5px;
@@ -228,7 +232,7 @@ footer .left-bottom,
   footer .right-bottom{
       position: absolute;
       bottom: 0;
-      font-family: Andale Mono, monospace;
+      font-family: Cygre, monospace;
       right: 0px;
       font-size: 20px;;
       color: #FFFFFF;

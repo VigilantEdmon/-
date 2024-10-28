@@ -1,33 +1,18 @@
-.service{
+.contact1
+{
     position: absolute;
     top: 250px;    
     font-size: 30px;
     font-family: Cygre;
-    padding: 50px;
+    padding: 30px;
 }
-
-.punktu{
-    position: absolute;
-    top: 650px;    
-    font-size: 30px;
-    font-family: Cygre;
-    padding: 50px;
-}
-
-x9 {
-    font-size: 38px;
-    font-family: 'Dela Gothic One', sans-serif;
-    font-weight: 750;
-    line-height: 67.20px;
-    word-wrap: break-word;
-  }
 
 footer {
     position: absolute;
     width: 100%;
     font-family: Cygre, monospace; 
     height: 129px;
-    top: 1250px;
+    top: 1000px;
     background: linear-gradient(90deg, rgba(15,87,186,1) 23%, rgba(9,9,121,1) 82%);
     bottom: 0;
   }

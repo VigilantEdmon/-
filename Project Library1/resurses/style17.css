@@ -1,9 +1,9 @@
 footer {
     position: absolute;
     width: 100%;
-    font-family: Andale Mono, monospace; 
+    font-family: Cygre, monospace; 
     height: 129px;
-    top: 11000px;
+    top: 11300px;
     background: linear-gradient(90deg, rgba(15,87,186,1) 23%, rgba(9,9,121,1) 82%);
     bottom: 0;
   }
@@ -19,7 +19,7 @@ x10 {
   footer .left-bottom,
             footer .right-bottom {
                 margin: 0;
-                font-family: Andale Mono, monospace; 
+                font-family: Cygre, monospace; 
                 color: #FFFFFF;
                 font-size: 20px;
                 padding: 5px;
@@ -27,7 +27,7 @@ x10 {
     footer .right-bottom{
         position: absolute;
         bottom: 0;
-        font-family: Andale Mono, monospace;
+        font-family: Cygre, monospace;
         right: 0px;
         font-size: 20px;;
         color: #FFFFFF;
