@@ -1,0 +1,235 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+  body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container-header {
+    margin: auto;
+    background: radial-gradient(#1a37c6 5%, #04007f 95%);
+  }
+  
+  .nav-main_link-head {
+    font-size: 30px;
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+  
+  .logo-head {
+    position: absolute;
+    width: 263px;
+    height: 100px;
+    left: 36px;
+    top: 39px;
+  }
+  
+  .slider-img {
+    position: absolute;
+    width: 743px;
+    height: 500px;
+    left: 720px;
+    top: 200px;
+    border-radius: 100px;
+  
+  }
+  
+
+  
+  .wrapper {
+    position: absolute;
+    width: 1440px;
+    height: 54px;
+    left: 338px;
+    right: 92px;
+    top: 71px;
+    bottom: 915px;
+    z-index: 1;
+  }
+  
+  .wrapper .menu {
+    display: flex;
+    list-style-type: none;
+    /* Убираем стандартные маркеры списка */
+    position: relative;
+    /* Убираем возможность смещения */
+    z-index: 10;
+    /* Повышаем приоритет меню, чтобы оно всегда было выше остальных элементов */
+  }
+  
+  .menu-item {
+    position: relative;
+    margin: 0 0px;
+    /* Задаем отступы между элементами списка */
+  }
+  
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    /* Меню появится под основным элементом */
+    left: 0;
+    background-color: #3029D9;
+    box-shadow: 0px 8px 16px rgba(254, 254, 254, 0.326);
+    /* Для эффекта выпадающего меню */
+    border-radius: 27px;
+    z-index: 1;
+  
+  }
+  
+  .submenu>a:hover {
+    text-decoration: underline;
+  }
+  
+  .menu-item:hover .submenu {
+    display: block;
+    /* Показываем подменю при наведении */
+  }
+  
+  .submenu-link {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+  
+  
+  .wrapper a {
+    margin-right: 30px;
+  }
+  
+  
+  .next-main-slider-dots {
+    
+    margin-top: 200px;
+  }
+  
+  .next-main-slider-dots>span {
+    width: 13px;
+    height: 13px;
+    background-color: #808080;
+    z-index: 1;
+    margin: 516px 0 0 13px;
+    border-radius: 50%;
+    cursor: pointer;
+  
+  }
+  
+  .next-main-slider-dots>span.active {
+    background-color: #DFDFDF;
+  }
+
+.resoursesInfo{
+  
+      position: absolute;
+      top: 250px;    
+      font-size: 30px;
+      font-family: Roboto;
+      padding: 30px;
+
+}
+h2{
+    position: absolute;
+    text-decoration: none;
+    text-align: left;
+    left: 60px;
+    top: 630px;
+}
+
+.resoursesInfo x2 {
+  font-size: 38px;
+  font-family: 'Dela Gothic One', sans-serif;
+  font-weight: 750;
+  line-height: 67.20px;
+  word-wrap: break-word;
+}
+
+.ul{
+    position: absolute;
+    width: 900px;
+   
+    left: 70px;
+    top: 640px;
+
+  
+    color: rgb(0, 0, 0);
+    font-family: Roboto;
+    font-size: 23px;
+    
+    font-family: Roboto;
+   
+    letter-spacing: 0%;
+    text-align: left;
+
+}
+
+ /* Стили для контейнера ul */
+ .ul {
+    list-style-type: none; /* Убираем стандартные маркеры списка */
+    padding-left: px; /* Отступ слева */
+}
+
+/* Стили для элементов списка */
+.ul li {
+    position: relative;
+    padding-bottom: 2px; /* Отступ снизу для подчеркивания */
+    display: inline-block; /* Делаем элементы списка блочными, чтобы подчеркивание адаптировалось к ширине текста */
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.ul li::before {
+    content: '.'; /* Добавляем точку перед каждым элементом списка */
+    margin-right: 10px; /* Отступ между точкой и текстом */
+    font-size: 30px;/*Толщина линии*/
+}
+
+.ul li::after {
+    content: '';
+    position: absolute;
+    left: 20px; /* Сдвигаем линию вправо, чтобы она начиналась после точки */
+    bottom: 0;
+    width: calc(100% - 20px); /* Ширина линии минус отступ слева */
+    height: 2px; /* Толщина подчеркивания */
+    background-color: black; 
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  font-family: Andale Mono, monospace; 
+  height: 129px;
+  top: 1100px;
+  background: linear-gradient(90deg, rgba(15,87,186,1) 23%, rgba(9,9,121,1) 82%);
+  bottom: 0;
+}
+
+footer .left-bottom,
+          footer .right-bottom {
+              margin: 0;
+              font-family: Andale Mono, monospace; 
+              color: #FFFFFF;
+              font-size: 20px;
+              padding: 5px;
+          }
+  footer .right-bottom{
+      position: absolute;
+      bottom: 0;
+      font-family: Andale Mono, monospace;
+      right: 0px;
+      font-size: 20px;;
+      color: #FFFFFF;
+}

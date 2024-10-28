@@ -1,0 +1,678 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+}
+
+.default-container {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(#5975FF 5%, #04007f 95%);
+  margin: 0 auto;
+  height: 100vh;
+  /* Высота на 100% экрана */
+}
+
+.nav-main_link-head {
+  font-size: 1.6rem;
+  /* Относительный размер шрифта */
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.logo-head {
+  position: absolute;
+  width: 15vw;
+  /* Задаем ширину в процентах от ширины экрана */
+  top: -1.5rem;
+  margin-left: 1rem;
+}
+
+.slider-img {
+  position: relative;
+  /* Устанавливаем относительное позиционирование */
+  width: 50vw;
+  /* Процентная ширина */
+  max-width: 700px;
+  /* Ограничение максимальной ширины */
+  height: auto;
+  /* Сохраняем пропорции картинки */
+  left: 60%;
+  top: 20vh;
+  /* Процент от высоты экрана */
+  transform: translateX(-50%);
+  /* Центрируем картинку по горизонтали */
+  border-radius: 20px;
+  /* Уменьшил радиус для адаптивности */
+}
+
+.slider-img-txt>.p-head {
+  color: #FFFFFF;
+  position: absolute;
+  max-width: 90vw;
+  /* Ограничение ширины для мобильных устройств */
+  top: 49vh;
+  left: 9%;
+  transform: translateX(-50%);
+  font-family: monospace;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.wrapper {
+  position: relative;
+  z-index: 1;
+  height: 54px;
+  top: 5vh;
+}
+
+.wrapper .menu {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  /* Центрируем меню */
+}
+
+.menu-item {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: #3029D9;
+  box-shadow: 0px 8px 16px rgba(254, 254, 254, 0.326);
+  border-radius: 27px;
+  z-index: 1;
+}
+
+.submenu>a:hover {
+  text-decoration: underline;
+}
+
+.menu-item:hover .submenu {
+  display: block;
+}
+
+.submenu-link {
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+li {
+  list-style-type: none;
+
+}
+
+.wrapper a {
+  margin-right: 1.5rem;
+}
+
+.next-main-slider-dots {
+  display: flex;
+  position: absolute;
+  bottom: 128px;
+  /* Располагаем индикаторы ниже картинки */
+  left: 57%;
+  transform: translateX(-50%);
+}
+
+.next-main-slider-dots>span {
+  width: 13px;
+  height: 13px;
+  background-color: #808080;
+  z-index: 1;
+  margin-left: 13px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.next-main-slider-dots>span.active {
+  background-color: #DFDFDF;
+}
+
+/* Адаптивность */
+
+@media (max-width: 768px) {
+  .wrapper {
+    top: 3vh;
+  }
+
+  .wrapper .menu {
+    flex-direction: column;
+    /* Для узких экранов меню будет вертикальным */
+    margin-left: 0;
+  }
+
+  .wrapper a {
+    margin-right: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .logo-head {
+    width: 25vw;
+    top: 0;
+  }
+
+  .slider-img {
+    width: 90vw;
+    /* Увеличиваем на мобильных устройствах */
+    height: auto;
+    top: 30vh;
+  }
+
+  .slider-img-txt>.p-head {
+    font-size: 1.5rem;
+    top: 80vh;
+  }
+
+  .next-main-slider-dots {
+    top: 95vh;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .wrapper .menu {
+    margin-left: 200px;
+  }
+
+  .slider-img {
+    width: 60vw;
+    height: auto;
+    top: 25vh;
+  }
+
+  .slider-img-txt>.p-head {
+    font-size: 2rem;
+    top: 70vh;
+  }
+
+  .next-main-slider-dots {
+    top: 90vh;
+  }
+}
+
+
+/*main*/
+
+/* Основные стили */
+main {
+  width: 100%;
+  padding: 20px;
+
+  margin: 0 auto;
+}
+
+h1 {
+  color: rgb(11, 17, 49);
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: left;
+  margin-bottom: 20px;
+  margin-left: 11rem;
+}
+
+p {
+  color: rgb(100, 106, 114);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: left;
+  margin-bottom: 20px;
+  max-width: 100%;
+  margin-left: 11rem;
+}
+
+.nav-main_link {
+  font-size: 1.875rem;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+/* Кнопка */
+.button {
+  margin-top: 2rem;
+  text-align: left;
+  margin-left: 9rem;
+}
+
+.custom-button {
+  border-radius: 8px;
+  border: none;
+  background: rgb(41, 70, 255);
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: inline-block;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.custom-button:hover {
+  background: rgb(30, 50, 180);
+  transform: translateY(-3px);
+}
+
+/* Иконки */
+.telegramm,
+.ebook,
+.laptop {
+  position: relative;
+  width: 55px;
+  height: 55px;
+  left: 18rem;
+  bottom: 2.5rem;
+}
+
+.telegramm:hover,
+.ebook:hover,
+.laptop:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+/* Сетка изображений */
+.container-square {
+  display: grid;
+  position: absolute;
+  grid-template-columns: repeat(2, 150px);
+  /* Два квадрата в ряд */
+  margin-left: 50rem;
+  top: 64rem;
+}
+
+.square-1 {
+  width: 300px;
+  height: 150px;
+  background-color: rgba(40, 70, 255, 0.2);
+  /* Цвет квадрата */
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  /* Тень для объёма */
+  border-radius: 10px;
+  /* Закругленные углы для эстетики */
+  transition: transform 0.3s ease;
+  /* Анимация при наведении */
+  margin-top: 2rem;
+  border-radius: 50px 0 50px 50px;
+}
+
+.square-2 {
+  width: 300px;
+  height: 150px;
+  background-color: rgba(40, 70, 255, 0.2);
+  /* Цвет квадрата */
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  /* Тень для объёма */
+  border-radius: 10px;
+  /* Закругленные углы для эстетики */
+  transition: transform 0.3s ease;
+  /* Анимация при наведении */
+  margin-left: 12rem;
+  border-radius: 50px 50px 50px 0px;
+}
+
+.square-3 {
+  width: 300px;
+  height: 150px;
+  background-color: rgba(40, 70, 255, 0.2);
+  /* Цвет квадрата */
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  /* Тень для объёма */
+  border-radius: 10px;
+  /* Закругленные углы для эстетики */
+  transition: transform 0.3s ease;
+  /* Анимация при наведении */
+  margin-top: 2rem;
+  border-radius: 50px 0 50px 50px;
+}
+
+.square-4 {
+  width: 300px;
+  height: 150px;
+  background-color: rgba(40, 70, 255, 0.2);
+  /* Цвет квадрата */
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  /* Тень для объёма */
+  border-radius: 10px;
+  /* Закругленные углы для эстетики */
+  transition: transform 0.3s ease;
+  /* Анимация при наведении */
+  margin-left: 12rem;
+  border-radius: 50px 50px 50px 0px;
+}
+
+.square-1:hover,
+.square-2:hover,
+.square-3:hover,
+.square-4:hover {
+  transform: translateY(-10px);
+  
+}
+
+.square-txt {
+  font-size: 2rem;
+ text-align: center;
+  font-weight: 1000;
+  margin: 1rem;
+  color: #3029D9;
+  text-shadow: 2px 2px 0 #B0C4DE, 2px 2px 0 #B0C4DE;
+}
+
+.square-txt-1 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-left: 50px;
+  margin-top: 15px;
+  color: #3029D9;
+  text-shadow: 1px 1px 0 #B0C4DE;
+}
+
+.square-main {
+  position: relative;
+  width: 650px;
+  height: 630px;
+  background-color: rgba(255, 255, 255, 0.2);
+  /* Цвет квадрата */
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  /* Тень для объёма */
+  border-radius: 30px;
+  /* Закругленные углы для эстетики */
+  transition: transform 0.3s ease;
+  /* Анимация при наведении */
+  margin-left: 1rem;
+}
+.square-main>h1 {
+  text-align: center;
+  margin-left: 10px;
+}
+.square-main>p {
+  font-size: 0.8rem;
+ text-align: center;
+  font-weight: 1000;
+  margin: 1rem;
+  color: #646A72;
+  
+} 
+
+/* Заказ литературы и информация для преподавателей */
+.OT-container {
+  display: flex;
+  justify-content: space-between;
+  /* Распределяем элементы с отступами между ними */
+  align-items: flex-start;
+  /* Выравнивание по верхнему краю */
+  gap: 20px;
+  /* Отступ между элементами */
+  margin: 1rem 13rem 8rem 1rem;
+}
+
+.order-square {
+  position: relative;
+  width: 650px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.2);
+  /* Цвет квадрата */
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  /* Тень для объёма */
+  border-radius: 30px;
+  /* Закругленные углы для эстетики */
+  transition: transform 0.3s ease;
+  /* Анимация при наведении */
+}
+
+.teachers-square {
+  position: relative;
+  width: 650px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.2);
+  /* Цвет квадрата */
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  /* Тень для объёма */
+  border-radius: 30px;
+  /* Закругленные углы для эстетики */
+  transition: transform 0.3s ease;
+  /* Анимация при наведении */
+}
+
+.square-main:hover,
+.order-square:hover,
+.teachers-square:hover {
+  transform: translateY(-5px);
+}
+
+.order-container,
+.teachers-container {
+  display: flex;
+  flex-direction: column;
+  /* Элементы внутри этих контейнеров остаются вертикальными */
+  align-items: flex-start;
+  /* Выравнивание по левому краю */
+
+}
+
+.order,
+.teachers {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  margin-left: 30px;
+  /* Отступ между заголовком и текстом */
+}
+
+.orderInfo,
+.teachersInfo {
+  font-size: 1rem;
+  margin-left: 30px;
+}
+
+/* Адаптация для маленьких экранов */
+@media (max-width: 768px) {
+  .OT-container {
+    flex-direction: column;
+    /* Меняем на вертикальное расположение на малых экранах */
+    gap: 10px;
+  }
+}
+
+
+/* Новости */
+
+@keyframes jitter {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -2px); }
+  60% { transform: translate(-2px, -2px); }
+  80% { transform: translate(2px, 2px); }
+}
+
+.news {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.news:hover {
+  animation: jitter 0.3s infinite;
+}
+
+
+.main-news {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  
+}
+
+.firstNew,
+.secondNew,
+.thirdNew,
+.fouthNew {
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  margin: rem 0 rem;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.firstNew:hover,
+.secondNew:hover,
+.thirdNew:hover,
+.fouthNew:hover {
+  transform: translateY(-5px);
+}
+
+.infoFirstNew,
+.infoSecondNew,
+.infoThirdNew,
+.infoFouthNew {
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.new-img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Логотип */
+.logo {
+  width: 150px;
+  height: 50px;
+  margin: 20px;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  p {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .group-img img {
+    width: 22%;
+  }
+
+  .main-news {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  p {
+    font-size: 0.875rem;
+  }
+
+  .group-img img {
+    width: 30%;
+  }
+
+  .main-news {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .firstNew,
+  .secondNew,
+  .thirdNew {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+
+  .group-img img {
+    width: 45%;
+  }
+
+  .telegramm,
+  .ebook,
+  .laptop {
+    width: 45px;
+    height: 45px;
+  }
+
+  .firstNew,
+  .secondNew,
+  .thirdNew {
+    max-width: 90%;
+  }
+}
+
+x17 {
+  font-size: 45px;
+  font-family: 'Dela Gothic One', sans-serif;
+  font-weight: 750;
+  line-height: 67.20px;
+  word-wrap: break-word;
+}
+
+x18 {
+  font-size: 24px;
+  font-family: 'Dela Gothic One', sans-serif;
+  font-weight: 750;
+  line-height: 37.20px;
+  word-wrap: break-word;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  font-family: Andale Mono, monospace;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(15, 87, 186, 1) 23%, rgba(9, 9, 121, 1) 82%);
+  bottom: 0;
+  justify-content: space-between;
+}
+
+footer .left-bottom {
+  margin: 0;
+  font-family: Andale Mono, monospace;
+  color: #FFFFFF;
+  font-size: 20px;
+  padding: 5px;
+}
+
+footer .right-bottom {
+  position: relative;
+  margin: 0;
+  font-family: Andale Mono, monospace;
+  padding: 5px;
+  font-size: 20px;
+  left: 2247px;
+  color: #FFFFFF;
+}
