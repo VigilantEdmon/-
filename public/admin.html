@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Админ — The Villa</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="left-controls">
+      <a class="btn btn-ghost" href="/">The Villa</a>
+      <button id="logout" class="btn btn-outline">Выйти</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Панель администратора</h1>
+    <section>
+      <h2>Состояние номеров</h2>
+      <div id="roomsStatus" class="cards"></div>
+    </section>
+    <section>
+      <h2>Бронирования</h2>
+      <div id="bookings" class="cards"></div>
+    </section>
+  </main>
+
+  <script>
+    async function checkAdmin() {
+      const role = localStorage.getItem('role');
+      if (role !== 'admin') window.location.href = '/login.html';
+    }
+    function authHeader() {
+      const t = localStorage.getItem('token');
+      return t ? { 'Authorization': `Bearer ${t}` } : {};
+    }
+    async function loadRoomsStatus() {
+      const res = await fetch('/api/rooms/status', { headers: { ...authHeader() } });
+      if (!res.ok) {
+        if (res.status === 401) return window.location.href = '/login.html';
+        return;
+      }
+      const items = await res.json();
+      const container = document.getElementById('roomsStatus');
+      container.innerHTML = '';
+      items.forEach(r => {
+        const el = document.createElement('div');
+        el.className = 'card';
+        el.innerHTML = `<div class="card-body">
+          <div class="badge">${r.category.toUpperCase()} · №${r.roomNumber}</div>
+          <div class="status ${r.status === 'Занято' ? 'busy' : (r.status === 'Забронировано' ? 'booked' : 'free')}">${r.status}${r.until ? ' до ' + r.until : ''}</div>
+          <div>Кроватей: ${r.beds}</div>
+        </div>`;
+        container.appendChild(el);
+      });
+    }
+    async function loadBookings() {
+      const res = await fetch('/api/bookings', { headers: { ...authHeader() } });
+      const data = await res.json();
+      const container = document.getElementById('bookings');
+      container.innerHTML = '';
+      data.forEach(b => {
+        const el = document.createElement('div');
+        el.className = 'card';
+        el.innerHTML = `<div class="card-body">
+          <div class="badge">${b.category.toUpperCase()} · №${b.roomNumber} · ${b.persons} перс.</div>
+          <div>${b.fullName}</div>
+          <div>${b.phone} · ${b.email}</div>
+          <div>С ${b.startDate} по ${b.endDate} (создано: ${b.createdAt})</div>
+        </div>`;
+        container.appendChild(el);
+      });
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+      checkAdmin();
+      loadRoomsStatus();
+      loadBookings();
+      document.getElementById('logout').addEventListener('click', () => { localStorage.clear(); window.location.href = '/'; });
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Villa — Гостиница</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <div class="left-controls">
+      <button id="langToggle" class="btn btn-ghost">RU / EN</button>
+      <a id="linkRegister" class="btn btn-accent" href="/register.html" data-i18n="register">Регистрация</a>
+      <a id="linkLogin" class="btn btn-primary" href="/login.html" data-i18n="login">Войти</a>
+      <a id="linkAdmin" class="btn btn-outline" href="/admin.html" style="display:none">Админ</a>
+      <span id="userInfo" class="muted" style="margin-left:8px;"></span>
+      <button id="logoutBtn" class="btn" style="display:none">Выйти</button>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="brand">The Villa</h1>
+      <p class="subtitle" data-i18n="description">Элегантная гостиница для вашего идеального отдыха.</p>
+      <section class="search-panel">
+        <div class="field">
+          <label data-i18n="category">Категория</label>
+          <select id="category">
+            <option value="standard" data-i18n="standard">Стандарт</option>
+            <option value="comfort" data-i18n="comfort">Комфорт</option>
+            <option value="luxe" data-i18n="luxe">Люкс</option>
+          </select>
+        </div>
+        <div class="field">
+          <label data-i18n="checkin">Дата заезда</label>
+          <input type="date" id="dateStart" />
+        </div>
+        <div class="field">
+          <label data-i18n="checkout">Дата выезда</label>
+          <input type="date" id="dateEnd" />
+        </div>
+        <div class="field">
+          <label data-i18n="persons">Персоны</label>
+          <input type="number" id="persons" min="1" value="1" />
+        </div>
+        <button id="searchBtn" class="btn btn-accent" data-i18n="findRooms">Найти номера</button>
+      </section>
+      <div class="stats" id="stats"></div>
+    </div>
+  </main>
+
+  <section class="rooms-preview">
+    <h2 data-i18n="roomsTitle">Категории номеров</h2>
+    <div class="cards" id="cards"></div>
+    <div class="centered">
+      <a class="btn btn-outline" href="/rooms.html" data-i18n="seeAll">Смотреть все номера</a>
+    </div>
+  </section>
+
+  <script src="/js/i18n.js"></script>
+  <script src="/js/ui.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
+
