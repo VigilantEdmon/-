@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Villa — Номера</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="left-controls">
+      <a class="btn btn-ghost" href="/" data-i18n="home">На главную</a>
+      <button id="langToggle" class="btn btn-ghost">RU / EN</button>
+      <a class="btn btn-accent" href="/register.html" data-i18n="register">Регистрация</a>
+      <a class="btn btn-primary" href="/login.html" data-i18n="login">Войти</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 data-i18n="roomsTitle">Категории номеров</h1>
+    <div class="filters">
+      <select id="category">
+        <option value="standard" data-i18n="standard">Стандарт</option>
+        <option value="comfort" data-i18n="comfort">Комфорт</option>
+        <option value="luxe" data-i18n="luxe">Люкс</option>
+      </select>
+      <input type="date" id="dateStart" />
+      <input type="date" id="dateEnd" />
+      <input type="number" id="persons" min="1" value="1" />
+      <button id="filterBtn" class="btn btn-accent" data-i18n="apply">Применить</button>
+    </div>
+    <div id="roomsList" class="cards"></div>
+  </main>
+
+  <div id="bookingModal" class="modal hidden">
+    <div class="modal-content">
+      <h3 data-i18n="booking">Бронирование</h3>
+      <div class="grid">
+        <input id="fio" placeholder="ФИО" />
+        <input id="phone" placeholder="Телефон" />
+        <input id="email" placeholder="Почта" />
+        <input id="bStart" type="date" />
+        <input id="bEnd" type="date" />
+        <input id="bPersons" type="number" min="1" value="1" />
+      </div>
+      <div class="modal-actions">
+        <button id="confirmBooking" class="btn btn-primary" data-i18n="confirm">Подтвердить</button>
+        <button id="cancelBooking" class="btn" data-i18n="cancel">Отмена</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/i18n.js"></script>
+  <script src="/js/rooms.js"></script>
+</body>
+</html>
+
