@@ -44,7 +44,7 @@ function renderRooms(rooms, category, persons, startIso, endIso) {
     const statusClass = r.available ? 'free' : 'busy';
     const statusText = r.available ? 'Свободно' : (r.until ? `Занято до ${r.until}` : 'Занято');
     el.innerHTML = `
-      <img src="${img[r.category]}" alt="${title[r.category]}">
+      <img src="${img[r.category]}" alt="${title[r.category]}" data-gallery="${r.category}">
       <div class="card-body">
         <div class="badge">${title[r.category]} · Комнат: 1 · Кроватей: ${r.beds}</div>
         <div class="status ${statusClass}">${statusText}</div>
@@ -53,6 +53,19 @@ function renderRooms(rooms, category, persons, startIso, endIso) {
         <button class="btn btn-primary" ${r.available ? '' : 'disabled'} data-room-id="${r.id}">Забронировать</button>
       </div>`;
     el.querySelector('button').addEventListener('click', () => openBookingModal(r, persons, startIso, endIso));
+    // simple gallery rotation per card
+    const imgEl = el.querySelector('img[data-gallery]');
+    const galleries = {
+      standard: ['/assets/luxe1.svg', '/assets/luxe2.svg'],
+      comfort: ['/assets/luxe2.svg', '/assets/luxe3.svg'],
+      luxe: ['/assets/luxe3.svg', '/assets/luxe1.svg']
+    };
+    let idx = 0;
+    setInterval(() => {
+      const g = galleries[r.category] || [img[r.category]];
+      idx = (idx + 1) % g.length;
+      imgEl.src = g[idx];
+    }, 5000);
     list.appendChild(el);
   });
 }

@@ -123,7 +123,7 @@ export function calculateTotalPrice(categoryKey, persons, nights) {
   const cfg = getPricingConfig()[categoryKey];
   if (!cfg) return 0;
   const extras = Math.max(0, persons - 1);
-  const perNight = cfg.base + extras * cfg.extra;
+  const perNight = persons * cfg.base + extras * cfg.extra;
   return perNight * Math.max(1, nights);
 }
 

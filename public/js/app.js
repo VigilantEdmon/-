@@ -53,5 +53,24 @@ function toRu(iso) {
 window.addEventListener('DOMContentLoaded', () => {
   fetchRoomsPreview();
   setupSearch();
+  loadSummary();
 });
+
+async function loadSummary() {
+  try {
+    const res = await fetch('/api/summary');
+    const data = await res.json();
+    const stats = document.getElementById('stats');
+    if (!stats || !data.categories) return;
+    const fmt = (cat, label) => {
+      const c = data.categories[cat];
+      return `<div class="badge">${label}: свободно ${c.free} из ${c.total}</div>`;
+    };
+    stats.innerHTML = [
+      fmt('standard', 'Стандарт'),
+      fmt('comfort', 'Комфорт'),
+      fmt('luxe', 'Люкс')
+    ].join(' ');
+  } catch (e) {}
+}
 

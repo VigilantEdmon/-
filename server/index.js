@@ -188,7 +188,7 @@ app.get('/api/rooms/status', authMiddleware, adminOnly, async (req, res) => {
         status = 'Занято';
         until = format(parse(current.end_date, 'yyyy-MM-dd', new Date()), 'dd.MM.yyyy');
       } else if (future) {
-        status = 'Забронировано';
+        status = 'Занято';
         until = format(parse(future.end_date, 'yyyy-MM-dd', new Date()), 'dd.MM.yyyy');
       }
       result.push({ id: room.id, category: room.category, roomNumber: room.room_number, beds: room.beds, status, until });
@@ -266,5 +266,35 @@ app.get('/api/bookings', authMiddleware, adminOnly, async (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`The Villa server running on http://localhost:${PORT}`);
+});
+
+// Summary endpoint: counts of rooms by category and occupancy (today)
+app.get('/api/summary', async (req, res) => {
+  try {
+    const db = await dbPromise;
+    const categories = ['standard', 'comfort', 'luxe'];
+    const todayIso = format(new Date(), 'yyyy-MM-dd');
+    const result = {};
+    let overallTotal = 0;
+    let overallOccupied = 0;
+    for (const cat of categories) {
+      const totalRow = await db.getAsync(`SELECT COUNT(*) AS c FROM rooms WHERE category = ?`, [cat]);
+      const occRow = await db.getAsync(
+        `SELECT COUNT(DISTINCT b.room_id) AS c FROM bookings b JOIN rooms r ON b.room_id = r.id
+         WHERE r.category = ? AND date(b.start_date) <= date(?) AND date(b.end_date) > date(?)`,
+        [cat, todayIso, todayIso]
+      );
+      const total = totalRow?.c || 0;
+      const occupied = occRow?.c || 0;
+      const free = Math.max(0, total - occupied);
+      result[cat] = { total, occupied, free };
+      overallTotal += total;
+      overallOccupied += occupied;
+    }
+    return res.json({ categories: result, overall: { total: overallTotal, occupied: overallOccupied, free: Math.max(0, overallTotal - overallOccupied) } });
+  } catch (e) {
+    console.error(e);
+    return res.status(500).json({ error: 'Ошибка сервера' });
+  }
 });
 

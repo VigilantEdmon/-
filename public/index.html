@@ -13,8 +13,11 @@
   <header class="topbar">
     <div class="left-controls">
       <button id="langToggle" class="btn btn-ghost">RU / EN</button>
-      <a class="btn btn-accent" href="/register.html" data-i18n="register">Регистрация</a>
-      <a class="btn btn-primary" href="/login.html" data-i18n="login">Войти</a>
+      <a id="linkRegister" class="btn btn-accent" href="/register.html" data-i18n="register">Регистрация</a>
+      <a id="linkLogin" class="btn btn-primary" href="/login.html" data-i18n="login">Войти</a>
+      <a id="linkAdmin" class="btn btn-outline" href="/admin.html" style="display:none">Админ</a>
+      <span id="userInfo" class="muted" style="margin-left:8px;"></span>
+      <button id="logoutBtn" class="btn" style="display:none">Выйти</button>
     </div>
   </header>
 
@@ -46,6 +49,7 @@
         </div>
         <button id="searchBtn" class="btn btn-accent" data-i18n="findRooms">Найти номера</button>
       </section>
+      <div class="stats" id="stats"></div>
     </div>
   </main>
 
@@ -58,6 +62,7 @@
   </section>
 
   <script src="/js/i18n.js"></script>
+  <script src="/js/ui.js"></script>
   <script src="/js/app.js"></script>
 </body>
 </html>
